@@ -3,6 +3,8 @@ package com.cypcode.library_microservice.domain;
 import java.io.Serializable;
 import java.util.List;
 
+import com.cypcode.library_microservice.domain.dto.AuthorDTO;
+import com.cypcode.library_microservice.domain.dto.CategoryDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -16,11 +18,19 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Data
 @Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="Book")
 @JsonIgnoreProperties(ignoreUnknown = true)

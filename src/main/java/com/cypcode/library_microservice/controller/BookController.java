@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cypcode.library_microservice.domain.Book;
+import com.cypcode.library_microservice.domain.dto.BookDTO;
 import com.cypcode.library_microservice.service.CRUDBookService;
 
 @RestController
@@ -23,7 +24,7 @@ public class BookController {
 	private CRUDBookService bookServiceImpl;
 
 	@PostMapping
-	public ResponseEntity<?> createBook(@RequestBody Book request){
+	public ResponseEntity<?> createBook(@RequestBody BookDTO request){
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED).body(bookServiceImpl.save(request));
 		}catch(Exception e) {
@@ -32,7 +33,7 @@ public class BookController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<?> updateBook(@RequestBody Book request){
+	public ResponseEntity<?> updateBook(@RequestBody BookDTO request){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(bookServiceImpl.save(request));
 		}catch(Exception e) {
